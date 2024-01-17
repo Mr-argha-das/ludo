@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ludo/deposit/screen/deposit.page.dart';
 
 class Deposit extends StatefulWidget {
   const Deposit({super.key});
@@ -10,6 +11,6 @@ class Deposit extends StatefulWidget {
 class _DepositState extends State<Deposit> {
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return const DepositPage();
   }
 }
