@@ -19,11 +19,17 @@ class _DepositPageState extends State<DepositPage> {
             color: Colors.blue.shade800,
             image: DecorationImage(
                 fit: BoxFit.cover, image: AssetImage(MyTheme.backgroundimage))),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  
-                ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            TextFormField(
+              decoration: InputDecoration(
+                
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
