@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 1.0.0+1
+version: 1.0.0
 
 environment:
   sdk: '>=3.1.3 <4.0.0'
@@ -36,8 +36,25 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   google_fonts: ^6.1.0
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.16.0
+  google_sign_in: ^6.1.6
+  intl_phone_number_input: ^0.7.3+1
+  flutter_otp_text_field: ^1.1.1
+  otp_pin_field: ^1.2.2
+  loading_animation_widget: ^1.2.0+4
+  simple_ripple_animation: ^0.0.9
+  provider: ^6.1.1
+  just_audio: ^0.9.36
+  shared_preferences: ^2.2.2
+  flutter_beep: ^1.0.0
+  http: ^1.1.0
+  dio: ^5.4.0
+  retrofit: ^4.0.3
+  
 
 dev_dependencies:
+  flutter_lints: ^3.0.1
   flutter_test:
     sdk: flutter
 
@@ -46,7 +63,6 @@ dev_dependencies:
   # activated in the `analysis_options.yaml` file located at the root of your
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
-  flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -63,6 +79,13 @@ flutter:
   assets:
     - assets/backgroundimage.png
     - assets/ludo.jpg
+    - assets/logo.png
+    - assets/
+    - assets/images/
+    - assets/images/dice/
+    - assets/images/crown/
+    - assets/sounds/
+    - assets/images/tictactoe.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

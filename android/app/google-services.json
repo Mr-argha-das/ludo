@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "280705585846",
+    "project_id": "ludo-win-65411",
+    "storage_bucket": "ludo-win-65411.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280705585846:android:08050924622b85c4a1cc17",
+        "android_client_info": {
+          "package_name": "com.avbigbuddy.ludo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDWLRA-ydyc3-QootAsFhce6APcpwO2pso"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

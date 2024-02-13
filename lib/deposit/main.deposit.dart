@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:ludo/deposit/screen/deposit.page.dart';
+
+import 'screen/deposit.page.dart';
+
+
 
 class Deposit extends StatefulWidget {
   const Deposit({super.key});
