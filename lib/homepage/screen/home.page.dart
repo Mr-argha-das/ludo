@@ -51,39 +51,39 @@ class _HomePageState extends State<HomePage> {
           style: GoogleFonts.aboreto(
               color: Colors.white, fontWeight: FontWeight.w600),
         ),
-        actions: const [
-          // Container(
-          //   height: 40,
-          //   width: 150,
-          //   decoration: const BoxDecoration(
-          //       color: Colors.white,
-          //       borderRadius: BorderRadius.only(
-          //           topLeft: Radius.circular(40),
-          //           bottomLeft: Radius.circular(40)),
-          //       boxShadow: [
-          //         BoxShadow(
-          //             color: Colors.black54,
-          //             spreadRadius: 1,
-          //             blurRadius: 15,
-          //             offset: Offset(-4, 4))
-          //       ]),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.start,
-          //     crossAxisAlignment: CrossAxisAlignment.center,
-          //     children: [
-          //       Padding(
-          //         padding: const EdgeInsets.all(8.0),
-          //         child: Text(
-          //           "₹  10000000",
-          //           style: GoogleFonts.montserrat(
-          //               color: Colors.black,
-          //               fontSize: 20,
-          //               fontWeight: FontWeight.bold),
-          //         ),
-          //       )
-          //     ],
-          //   ),
-          // ),
+        actions:  [
+          Container(
+            height: 40,
+            width: 150,
+            decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(40),
+                    bottomLeft: Radius.circular(40)),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.black54,
+                      spreadRadius: 1,
+                      blurRadius: 15,
+                      offset: Offset(-4, 4))
+                ]),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    "₹  10000000",
+                    style: GoogleFonts.montserrat(
+                        color: Colors.black,
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold),
+                  ),
+                )
+              ],
+            ),
+          ),
         ],
       ),
       body: Container(
@@ -100,82 +100,82 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 80,
             ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   crossAxisAlignment: CrossAxisAlignment.center,
-            //   children: [
-            //     Padding(
-            //       padding: const EdgeInsets.all(8.0),
-            //       child: GestureDetector(
-            //         onTap: () {
-            //           Navigator.push(
-            //               context,
-            //               CupertinoPageRoute(
-            //                   builder: (context) => const WithDrawalMain()));
-            //         },
-            //         child: Container(
-            //           height: 50,
-            //           width: 180,
-            //           decoration: BoxDecoration(
-            //               color: Colors.blue.shade800,
-            //               borderRadius: BorderRadius.circular(400),
-            //               border: Border.all(
-            //                   color: const Color.fromARGB(255, 221, 136, 8),
-            //                   width: 4),
-            //               boxShadow: const [
-            //                 BoxShadow(
-            //                     color: Colors.black54,
-            //                     spreadRadius: 1,
-            //                     blurRadius: 15,
-            //                     offset: Offset(-4, 4))
-            //               ]),
-            //           child: Center(
-            //             child: Text(
-            //               "WITHDRAWAL",
-            //               style: GoogleFonts.aboreto(
-            //                   color: Colors.white, fontSize: 18),
-            //             ),
-            //           ),
-            //         ),
-            //       ),
-            //     ),
-            //     Padding(
-            //       padding: const EdgeInsets.all(8.0),
-            //       child: GestureDetector(
-            //         onTap: () {
-            //           Navigator.push(
-            //               context,
-            //               CupertinoPageRoute(
-            //                   builder: (context) => const Deposit()));
-            //         },
-            //         child: Container(
-            //           height: 50,
-            //           width: 180,
-            //           decoration: BoxDecoration(
-            //               color: Colors.blue.shade800,
-            //               borderRadius: BorderRadius.circular(400),
-            //               border: Border.all(
-            //                   color: const Color.fromARGB(255, 221, 136, 8),
-            //                   width: 4),
-            //               boxShadow: const [
-            //                 BoxShadow(
-            //                     color: Colors.black54,
-            //                     spreadRadius: 1,
-            //                     blurRadius: 15,
-            //                     offset: Offset(-4, 4))
-            //               ]),
-            //           child: Center(
-            //             child: Text(
-            //               "DEPOSIT",
-            //               style: GoogleFonts.aboreto(
-            //                   color: Colors.white, fontSize: 18),
-            //             ),
-            //           ),
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                              builder: (context) => const WithDrawalMain()));
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 180,
+                      decoration: BoxDecoration(
+                          color: Colors.blue.shade800,
+                          borderRadius: BorderRadius.circular(400),
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 221, 136, 8),
+                              width: 4),
+                          boxShadow: const [
+                            BoxShadow(
+                                color: Colors.black54,
+                                spreadRadius: 1,
+                                blurRadius: 15,
+                                offset: Offset(-4, 4))
+                          ]),
+                      child: Center(
+                        child: Text(
+                          "WITHDRAWAL",
+                          style: GoogleFonts.aboreto(
+                              color: Colors.white, fontSize: 18),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          CupertinoPageRoute(
+                              builder: (context) => const Deposit()));
+                    },
+                    child: Container(
+                      height: 50,
+                      width: 180,
+                      decoration: BoxDecoration(
+                          color: Colors.blue.shade800,
+                          borderRadius: BorderRadius.circular(400),
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 221, 136, 8),
+                              width: 4),
+                          boxShadow: const [
+                            BoxShadow(
+                                color: Colors.black54,
+                                spreadRadius: 1,
+                                blurRadius: 15,
+                                offset: Offset(-4, 4))
+                          ]),
+                      child: Center(
+                        child: Text(
+                          "DEPOSIT",
+                          style: GoogleFonts.aboreto(
+                              color: Colors.white, fontSize: 18),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
             const SizedBox(
               height: 50,
             ),
@@ -261,85 +261,85 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(
               height: 100,
             ),
-            // Row(
-            //   mainAxisAlignment: MainAxisAlignment.center,
-            //   crossAxisAlignment: CrossAxisAlignment.center,
-            //   children: [
-            //     // GestureDetector(
-            //     //   onTap: () {
-            //     //     Navigator.push(
-            //     //         context,
-            //     //         CupertinoPageRoute(
-            //     //             builder: (context) => const MainSetting()));
-            //     //   },
-            //     //   child: Container(
-            //     //     height: 60,
-            //     //     width: 60,
-            //     //     decoration: BoxDecoration(
-            //     //       color: Colors.blue.shade800,
-            //     //       borderRadius: BorderRadius.circular(500),
-            //     //       border: Border.all(
-            //     //           color: const Color.fromARGB(255, 221, 136, 8),
-            //     //           width: 4),
-            //     //     ),
-            //     //     child: const Center(
-            //     //       child: Icon(
-            //     //         Icons.settings,
-            //     //         color: Color.fromARGB(255, 221, 136, 8),
-            //     //         size: 28,
-            //     //       ),
-            //     //     ),
-            //     //   ),
-            //     // ),
-            //     const SizedBox(
-            //       width: 10,
-            //     ),
-            //     Container(
-            //       height: 60,
-            //       width: 60,
-            //       decoration: BoxDecoration(
-            //         color: Colors.blue.shade800,
-            //         borderRadius: BorderRadius.circular(500),
-            //         border: Border.all(
-            //             color: const Color.fromARGB(255, 221, 136, 8),
-            //             width: 4),
-            //       ),
-            //       child: const Center(
-            //         child: Icon(
-            //           Icons.support_agent,
-            //           color: Color.fromARGB(255, 221, 136, 8),
-            //           size: 30,
-            //         ),
-            //       ),
-            //     ),
-            //     const SizedBox(
-            //       width: 10,
-            //     ),
-            //     GestureDetector(
-            //       onTap: () {
-            //         showShareSheet();
-            //       },
-            //       child: Container(
-            //         height: 60,
-            //         width: 60,
-            //         decoration: BoxDecoration(
-            //           color: Colors.blue.shade800,
-            //           borderRadius: BorderRadius.circular(500),
-            //           border: Border.all(
-            //               color: const Color.fromARGB(255, 221, 136, 8),
-            //               width: 4),
-            //         ),
-            //         child: const Center(
-            //           child: Icon(
-            //             Icons.share,
-            //             color: Color.fromARGB(255, 221, 136, 8),
-            //             size: 30,
-            //           ),
-            //         ),
-            //       ),
-            //     ),
-            //   ],
-            // )
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        CupertinoPageRoute(
+                            builder: (context) => const MainSetting()));
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                      color: Colors.blue.shade800,
+                      borderRadius: BorderRadius.circular(500),
+                      border: Border.all(
+                          color: const Color.fromARGB(255, 221, 136, 8),
+                          width: 4),
+                    ),
+                    child: const Center(
+                      child: Icon(
+                        Icons.settings,
+                        color: Color.fromARGB(255, 221, 136, 8),
+                        size: 28,
+                      ),
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                Container(
+                  height: 60,
+                  width: 60,
+                  decoration: BoxDecoration(
+                    color: Colors.blue.shade800,
+                    borderRadius: BorderRadius.circular(500),
+                    border: Border.all(
+                        color: const Color.fromARGB(255, 221, 136, 8),
+                        width: 4),
+                  ),
+                  child: const Center(
+                    child: Icon(
+                      Icons.support_agent,
+                      color: Color.fromARGB(255, 221, 136, 8),
+                      size: 30,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 10,
+                ),
+                GestureDetector(
+                  onTap: () {
+                    showShareSheet();
+                  },
+                  child: Container(
+                    height: 60,
+                    width: 60,
+                    decoration: BoxDecoration(
+                      color: Colors.blue.shade800,
+                      borderRadius: BorderRadius.circular(500),
+                      border: Border.all(
+                          color: const Color.fromARGB(255, 221, 136, 8),
+                          width: 4),
+                    ),
+                    child: const Center(
+                      child: Icon(
+                        Icons.share,
+                        color: Color.fromARGB(255, 221, 136, 8),
+                        size: 30,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),
