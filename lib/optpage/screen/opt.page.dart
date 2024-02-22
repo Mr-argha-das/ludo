@@ -150,7 +150,7 @@ class _OptPageState extends State<OptPage> {
                               Navigator.pushAndRemoveUntil(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => HomePageMain()),
+                                      builder: (context) => const HomePageMain()),
                                   (route) => false);
                             }
                           } else {

@@ -10,7 +10,7 @@ String signUpResponseToJson(SignUpResponse data) => json.encode(data.toJson());
 
 class SignUpResponse {
     String message;
-    Data data;
+    Data? data;
     bool status;
 
     SignUpResponse({
@@ -21,13 +21,13 @@ class SignUpResponse {
 
     factory SignUpResponse.fromJson(Map<String, dynamic> json) => SignUpResponse(
         message: json["message"],
-        data: Data.fromJson(json["data"]),
+        data: Data.fromJson(json["data"]?? null),
         status: json["status"],
     );
 
     Map<String, dynamic> toJson() => {
         "message": message,
-        "data": data.toJson(),
+        "data": data?.toJson(),
         "status": status,
     };
 }
