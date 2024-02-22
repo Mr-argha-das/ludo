@@ -130,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
                         if(_fromKey.currentState!.validate()){
                          await LudoPhonelogin.sendOtp(context, number: controller.text, iscode: codeCountry, callBack: (){
                            lodar = false;
-                         });
+                         }, mobileno: controller.text);
                         }
                       },
                       child: phoneNumber(context,controller.text, codeCountry , _fromKey)),

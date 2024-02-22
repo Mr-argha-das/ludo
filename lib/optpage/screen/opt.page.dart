@@ -4,11 +4,17 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:ludo/conf/env.dart';
 import 'package:ludo/homepage/main.home.dart';
+import 'package:ludo/mainpage/model/login.model.dart';
+import 'package:ludo/mainpage/model/signup.model.dart';
+import 'package:ludo/mainpage/service/api.login.service.dart';
+import 'package:ludo/mainpage/service/login.api.service.dart';
 import 'package:otp_pin_field/otp_pin_field.dart';
 
 class OptPage extends StatefulWidget {
   final String verificationId;
-  const OptPage({super.key, required this.verificationId});
+  final String mobileno;
+  const OptPage(
+      {super.key, required this.verificationId, required this.mobileno});
 
   @override
   State<OptPage> createState() => _OptPageState();
@@ -95,7 +101,6 @@ class _OptPageState extends State<OptPage> {
                               ),
                               textAlign: TextAlign.center,
                             ),
-                            
                             enabledBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(25),
                                 borderSide: BorderSide(
@@ -132,12 +137,30 @@ class _OptPageState extends State<OptPage> {
                                 smsCode: _otpController.text.toString());
                         FirebaseAuth.instance
                             .signInWithCredential(credential)
-                            .then((value) {
-                          Navigator.pushAndRemoveUntil(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomePageMain()),
-                              (route) => false);
+                            .then((value) async {
+                          final userService = UserLoginSignup(createDio());
+                          SignUpResponse userData =
+                              await userService.signupp(widget.mobileno, "");
+                          if (userData.data == null) {
+                            final userLoginService = UserLogin(createDio());
+                            LoginUpResponse responseData =
+                                await userLoginService.login(widget.mobileno);
+                            if (responseData.status == true) {
+                              // ignore: use_build_context_synchronously
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => HomePageMain()),
+                                  (route) => false);
+                            }
+                          } else {
+                            // ignore: use_build_context_synchronously
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => HomePageMain()),
+                                (route) => false);
+                          }
                         });
                       } catch (e) {
                         setState(() {
