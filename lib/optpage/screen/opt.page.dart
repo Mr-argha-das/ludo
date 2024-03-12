@@ -73,11 +73,7 @@ class _OptPageState extends State<OptPage> {
                     ),
                   ),
                 ),
-                Expanded(
-                    child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
+                
                     Image.asset("assets/logo.png"),
                     const SizedBox(
                       height: 40,
@@ -113,8 +109,7 @@ class _OptPageState extends State<OptPage> {
                         ),
                       ),
                     ),
-                  ],
-                )),
+                  
                 wrongotp
                     ? Text(
                         "OTP not matched",

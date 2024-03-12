@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -7,7 +8,11 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:ludo/conf/env.dart';
 import 'package:ludo/homepage/main.home.dart';
+import 'package:ludo/mainpage/model/login.model.dart';
+import 'package:ludo/mainpage/model/signup.model.dart';
+import 'package:ludo/mainpage/service/api.login.service.dart';
 import 'package:ludo/mainpage/service/google.login.dart';
+import 'package:ludo/mainpage/service/login.api.service.dart';
 import 'package:ludo/mainpage/service/phone.login.dart';
 
 class LoginPage extends StatefulWidget {
@@ -203,7 +208,33 @@ GestureDetector gooleLoginButton(context, Function callBack) {
        UserCredential data = await GoogleFirebaseService.signInWithGoogle();
       log(data.additionalUserInfo!.profile.toString());
       if (data.credential!.accessToken != null) {
-        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => const HomePageMain()), (route) => false);
+
+                            
+                          final userService = UserLoginSignup(createDio());
+                           Map<String, dynamic>  userDataGoogle = jsonDecode(data.additionalUserInfo!.profile.toString());
+                          SignUpResponse userData =
+                              await userService.signupp(userDataGoogle["id"], "");
+                          if (userData.data == null) {
+                            final userLoginService = UserLogin(createDio());
+                            LoginUpResponse responseData =
+                                await userLoginService.login(userDataGoogle["id"]);
+                            if (responseData.status == true) {
+                              // ignore: use_build_context_synchronously
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const HomePageMain()),
+                                  (route) => false);
+                            }
+                          } else {
+                            // ignore: use_build_context_synchronously
+                            Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const HomePageMain()),
+                                (route) => false);
+                          }
+                
       }
      }catch (e){
        callBack(false);

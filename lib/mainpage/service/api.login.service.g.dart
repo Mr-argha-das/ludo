@@ -13,7 +13,7 @@ class _UserLoginSignup implements UserLoginSignup {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://157.245.109.65:8082';
+    baseUrl ??= 'http://127.0.0.1:8000';
   }
 
   final Dio _dio;

@@ -1,6 +1,4 @@
 import 'package:dio/dio.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:ludo/mainpage/model/login.model.dart';
 import 'package:ludo/mainpage/model/signup.model.dart';
 import 'package:retrofit/retrofit.dart';
 
