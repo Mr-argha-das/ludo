@@ -104,7 +104,7 @@ class _HomePageState extends State<HomePage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
-                      "₹ ${balanceResponse?.data.balance}",
+                      "₹ ${balanceResponse?.data.balance.toStringAsFixed(2)}",
                       style: GoogleFonts.montserrat(
                           color: Colors.black,
                           fontSize: 20,

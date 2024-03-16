@@ -11,6 +11,8 @@ abstract class HomeServiece{
 
  @GET('/user-balance/{userid}')
  Future<HomeBalanceModel> getBalance(@Path('userid') String userid);
+ @PUT('/update-balance/{userid}/{value}')
+ Future<HomeBalanceModel> updateBalance(@Path('userid') String userid, @Path('value') bool status, @Query('amount') double amount);
 
 }
 
