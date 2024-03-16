@@ -13,7 +13,7 @@ class _UserLogin implements UserLogin {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://127.0.0.1:8000';
+    baseUrl ??= 'http://139.59.17.168:8888';
   }
 
   final Dio _dio;
@@ -21,11 +21,12 @@ class _UserLogin implements UserLogin {
   String? baseUrl;
 
   @override
-  Future<LoginUpResponse> login(String enloginid) async {
+  Future<LoginUpResponse> login(UserLoginModel body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = {'enloginid': enloginid};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<LoginUpResponse>(Options(
       method: 'POST',

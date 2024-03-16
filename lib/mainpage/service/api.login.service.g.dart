@@ -13,7 +13,7 @@ class _UserLoginSignup implements UserLoginSignup {
     this._dio, {
     this.baseUrl,
   }) {
-    baseUrl ??= 'http://127.0.0.1:8000';
+    baseUrl ??= 'http://139.59.17.168:8888';
   }
 
   final Dio _dio;
@@ -21,17 +21,12 @@ class _UserLoginSignup implements UserLoginSignup {
   String? baseUrl;
 
   @override
-  Future<SignUpResponse> signupp(
-    String enloginid,
-    String upid,
-  ) async {
+  Future<SignUpResponse> signupp(UserCreateModel body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = {
-      'enloginid': enloginid,
-      'upid': upid,
-    };
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<SignUpResponse>(Options(
       method: 'POST',
@@ -50,6 +45,34 @@ class _UserLoginSignup implements UserLoginSignup {
               baseUrl,
             ))));
     final value = SignUpResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<AddBalanceResponseModel> addBalance(AddBalanceModel body) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body.toJson());
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<AddBalanceResponseModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/add-user-balance',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = AddBalanceResponseModel.fromJson(_result.data!);
     return value;
   }
 

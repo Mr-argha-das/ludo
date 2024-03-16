@@ -79,7 +79,7 @@ class _OptPageState extends State<OptPage> {
                       height: 40,
                     ),
                     const Expanded(child: SizedBox()),
-                    Expanded(
+                    Expanded( 
                       flex: 2,
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
@@ -121,48 +121,48 @@ class _OptPageState extends State<OptPage> {
                   padding: const EdgeInsets.all(13.0),
                   child: GestureDetector(
                     onTap: () async {
-                      setState(() {
-                        wrongotp = true;
-                        lodar = true;
-                      });
-                      try {
-                        PhoneAuthCredential credential =
-                            await PhoneAuthProvider.credential(
-                                verificationId: widget.verificationId,
-                                smsCode: _otpController.text.toString());
-                        FirebaseAuth.instance
-                            .signInWithCredential(credential)
-                            .then((value) async {
-                          final userService = UserLoginSignup(createDio());
-                          SignUpResponse userData =
-                              await userService.signupp(widget.mobileno, "");
-                          if (userData.data == null) {
-                            final userLoginService = UserLogin(createDio());
-                            LoginUpResponse responseData =
-                                await userLoginService.login(widget.mobileno);
-                            if (responseData.status == true) {
-                              // ignore: use_build_context_synchronously
-                              Navigator.pushAndRemoveUntil(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => const HomePageMain()),
-                                  (route) => false);
-                            }
-                          } else {
-                            // ignore: use_build_context_synchronously
-                            Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => HomePageMain()),
-                                (route) => false);
-                          }
-                        });
-                      } catch (e) {
-                        setState(() {
-                          wrongotp = true;
-                          lodar = false;
-                        });
-                      }
+                      // setState(() {
+                      //   wrongotp = true;
+                      //   lodar = true;
+                      // });
+                      // try {
+                      //   PhoneAuthCredential credential =
+                      //       await PhoneAuthProvider.credential(
+                      //           verificationId: widget.verificationId,
+                      //           smsCode: _otpController.text.toString());
+                      //   FirebaseAuth.instance
+                      //       .signInWithCredential(credential)
+                      //       .then((value) async {
+                      //     final userService = UserLoginSignup(createDio());
+                      //     SignUpResponse userData =
+                      //         await userService.signupp(widget.mobileno, "");
+                      //     if (userData.data == null) {
+                      //       final userLoginService = UserLogin(createDio());
+                      //       LoginUpResponse responseData =
+                      //           await userLoginService.login(widget.mobileno);
+                      //       if (responseData.status == true) {
+                      //         // ignore: use_build_context_synchronously
+                      //         Navigator.pushAndRemoveUntil(
+                      //             context,
+                      //             MaterialPageRoute(
+                      //                 builder: (context) => const HomePageMain()),
+                      //             (route) => false);
+                      //       }
+                      //     } else {
+                      //       // ignore: use_build_context_synchronously
+                      //       Navigator.pushAndRemoveUntil(
+                      //           context,
+                      //           MaterialPageRoute(
+                      //               builder: (context) => HomePageMain()),
+                      //           (route) => false);
+                      //     }
+                      //   });
+                      // } catch (e) {
+                      //   setState(() {
+                      //     wrongotp = true;
+                      //     lodar = false;
+                      //   });
+                      // }
                     },
                     child: Container(
                       height: 55,
