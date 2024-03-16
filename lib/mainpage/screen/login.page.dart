@@ -158,13 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                                               "$codeCountry-${controller.text}",
                                           upid: " "));
                                           AddBalanceResponseModel addbalanceResponse = await signupService.addBalance(AddBalanceModel(userId: response.data!.id.oid, balance: "65"));
-                                  Navigator.push(
-                                      context,
-                                      CupertinoPageRoute(
-                                          builder: (context) =>
-                                              const HomePageMain()));
-                                  // Obtain shared preferences.
-                                  final SharedPreferences prefs =
+                                   final SharedPreferences prefs =
                                       await SharedPreferences.getInstance();
 
                                   await prefs.setString('userId',
@@ -175,17 +169,20 @@ class _LoginPageState extends State<LoginPage> {
 
                                   await prefs.setString(
                                       'upid', response.data!.upid.toString());
-                                } catch (e) {
-                                  LoginUpResponse loginUpResponse =
-                                      await loginService.login(UserLoginModel(
-                                          enloginid:
-                                              "$codeCountry-${controller.text}"));
+                                  
                                   Navigator.push(
                                       context,
                                       CupertinoPageRoute(
                                           builder: (context) =>
                                               const HomePageMain()));
-                                  final SharedPreferences prefs =
+                                  // Obtain shared preferences.
+                                 
+                                } catch (e) {
+                                  LoginUpResponse loginUpResponse =
+                                      await loginService.login(UserLoginModel(
+                                          enloginid:
+                                              "$codeCountry-${controller.text}"));
+                                              final SharedPreferences prefs =
                                       await SharedPreferences.getInstance();
 
                                   await prefs.setString('userId',
@@ -198,6 +195,12 @@ class _LoginPageState extends State<LoginPage> {
 
                                   await prefs.setString('upid',
                                       loginUpResponse.data.upid.toString());
+                                  Navigator.push(
+                                      context,
+                                      CupertinoPageRoute(
+                                          builder: (context) =>
+                                              const HomePageMain()));
+                                  
                                 }
                               },
                               child: phoneNumber(context, controller.text,
