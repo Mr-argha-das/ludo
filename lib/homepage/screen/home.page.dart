@@ -26,21 +26,25 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    getBalance();
+    
   }
-  void getBalance() async {
-   setState(() async {
-       final SharedPreferences prefs = await SharedPreferences.getInstance();
+  Future<HomeBalanceModel> getBalance() async {
+     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final String? userId = prefs.getString('userId');
     log(userId.toString());
     final homeService = HomeServiece(createDio());
-     balanceResponse  = await homeService.getBalance(userId!);
+     final data  = await homeService.getBalance(userId!);
     log("//////////////");
-    log(balanceResponse!.data.id.toString());
-   });
+   return data;
   }
   @override
   Widget build(BuildContext context) {
+    Future<HomeBalanceModel>  data = getBalance();
+    data!.then((value){
+      setState(() {
+        balanceResponse = value;
+      });
+    });
     return Material(
       color: Colors.blue.shade800 ,
       child: balanceResponse == null?  const Center(
